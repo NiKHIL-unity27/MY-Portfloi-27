@@ -8,6 +8,7 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         });
     });
 });
+
 document.addEventListener('DOMContentLoaded', function () {
     const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
 
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     handleScroll();
     window.addEventListener('scroll', handleScroll);
 });
+
 document.getElementById('mobile-menu').addEventListener('click', function() {
     const navList = document.querySelector('.nav-list');
     navList.classList.toggle('active');
