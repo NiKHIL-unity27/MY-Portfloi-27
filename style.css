@@ -9,34 +9,56 @@ body {
 
 header {
     background: rgba(0, 0, 0, 0.8);
-    padding: 20px 0;
+    padding: 10px 20px;
     position: fixed;
     width: 100%;
     top: 0;
     left: 0;
     z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header nav ul {
+header .logo a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header .menu-toggle {
+    display: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+header .menu-toggle:hover {
+    color: #ff4757;
+}
+
+header .nav-list {
     list-style: none;
     display: flex;
-    justify-content: center;
     margin: 0;
     padding: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-header nav ul li {
-    margin: 0 20px;
+header .nav-list li {
+    margin: 0 15px;
 }
 
-header nav ul li a {
+header .nav-list li a {
     color: #fff;
     text-decoration: none;
     font-size: 1.1rem;
     transition: color 0.3s ease, transform 0.3s ease;
 }
 
-header nav ul li a:hover {
+header .nav-list li a:hover {
     color: #ff4757;
     transform: scale(1.1);
 }
@@ -99,10 +121,35 @@ section {
     padding: 60px 20px;
 }
 
+.about {
+    background-color: #4682b4;
+    color: #fff;
+}
+
+.about h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+.about p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
 .projects {
     background: linear-gradient(45deg, #f3ec78, #af4261);
     background-size: 200% 200%;
     animation: gradientAnimation 10s ease infinite;
+}
+
+.projects h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
 }
 
 .projects .project-list {
@@ -154,6 +201,12 @@ section {
     animation: gradientAnimation 10s ease infinite;
 }
 
+.skills h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
 .skills ul {
     list-style: none;
     display: flex;
@@ -172,6 +225,12 @@ section {
 
 .contact {
     background-color: wheat;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
 }
 
 footer {
@@ -312,176 +371,6 @@ form button:hover {
     animation: fadeInUp 0.6s forwards;
 }
 
-/* Responsive Styles */
-@media (max-width: 768px) {
-    header nav ul {
-        flex-direction: column;
-    }
-
-    header nav ul li {
-        margin: 10px 0;
-    }
-
-    .projects .project {
-        flex: 1 1 calc(50% - 30px);
-        max-width: calc(50% - 30px);
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1.2rem;
-    }
-
-    .cta {
-        padding: 8px 16px;
-    }
-
-    .contact form {
-        padding: 15px;
-    }
-
-    .skills ul li {
-        margin: 10px;
-        padding: 8px 16px;
-    }
-}
-/* Header Styling */
-header {
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    padding: 10px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-header .menu-toggle {
-    display: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-}
-
-header .nav-list {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-header .nav-list li {
-    margin: 0 15px;
-}
-
-header .nav-list li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-header .nav-list li a:hover {
-    color: #ff4757; /* Change color on hover */
-    transform: scale(1.1); /* Slightly increase size on hover */
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    header .nav-list {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        position: absolute;
-        top: 60px; /* Adjust based on header height */
-        left: 0;
-        background: rgba(0, 0, 0, 0.9); /* Dark background for dropdown */
-        padding: 10px 0;
-    }
-
-    header .nav-list.active {
-        display: flex;
-    }
-
-    header .nav-list li {
-        margin: 10px 0;
-        text-align: center;
-    }
-
-    header .menu-toggle {
-        display: block;
-    }
-}
-/* Header Styling */
-header {
-    background: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    padding: 10px 20px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-header .logo a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-}
-
-header .menu-toggle {
-    display: none;
-    color: #fff;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-header .menu-toggle:hover {
-    color: #ff4757; /* Change color on hover */
-}
-
-header .nav-list {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-header .nav-list li {
-    margin: 0 15px;
-}
-
-header .nav-list li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s ease, transform 0.3s ease;
-}
-
-header .nav-list li a:hover {
-    color: #ff4757; /* Change color on hover */
-    transform: scale(1.1); /* Slightly increase size on hover */
-}
-
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
     header .nav-list {
@@ -489,9 +378,9 @@ header .nav-list li a:hover {
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 60px; /* Adjust based on header height */
+        top: 60px;
         left: 0;
-        background: rgba(0, 0, 0, 0.9); /* Dark background for dropdown */
+        background: rgba(0, 0, 0, 0.9);
         padding: 10px 0;
         opacity: 0;
         transform: translateY(-20px);
@@ -530,14 +419,37 @@ header .nav-list li a:hover {
     header .menu-toggle {
         display: block;
     }
-}
 
-.about {
+    .projects .project {
+        flex: 1 1 calc(50% - 30px);
+        max-width: calc(50% - 30px);
+    }
 
-    background-color: #4682b4;
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .cta {
+        padding: 8px 16px;
+    }
+
+    .contact form {
+        padding: 15px;
+    }
+
+    .skills ul li {
+        margin: 10px;
+        padding: 8px 16px;
+    }
 }
 
 @media (max-width: 480px) {
-    header nav ul {
-        flex-direction: column;
-        align-items
+    .projects .project {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
