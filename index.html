@@ -19,6 +19,7 @@
         <ul class="nav-list">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Me</a></li>
+            <li><a href="#integrations">Integrations</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -28,7 +29,7 @@
 
     <section id="home" class="hero">
         <h1>Nikhil Singh</h1>
-        <p>Game Developer | VR/AR Specialist | Unity Expert</p>
+        <p>Game Developer | VR/AR/MR Specialist | Hardware Integration Engineer</p>
         <div class="cta-buttons">
             <a href="#projects" class="cta">View My Work</a>
             <a href="./Nikhilcv.pdf" class="cta download-cv" download>Download CV</a>
@@ -37,7 +38,54 @@
 
     <section id="about" class="about">
         <h2>About Me</h2>
-        <p>Passionate game developer specializing in immersive experiences with Unity, VR/AR/XR technologies. Skilled in creating engaging gameplay mechanics, interactive environments, and cutting-edge extended reality applications. Eager to contribute innovative solutions and technical expertise to next-generation gaming projects.</p>
+        <p>Passionate game developer specializing in immersive experiences with Unity, VR/AR/XR technologies. Beyond software, I build real-world hardware-to-software pipelines &mdash; connecting BLE devices, cameras, NFC readers, drones, and computer vision into Unity and XR headsets to create physical-to-virtual interactive systems. Eager to contribute innovative solutions and technical expertise to next-generation gaming and simulation projects.</p>
+    </section>
+
+    <section id="integrations" class="integrations">
+        <h2>Hardware &amp; Systems Integration</h2>
+        <p class="integrations-subtitle">Real-world hardware and sensors connected to Unity, XR headsets, and desktop applications</p>
+        <div class="integration-grid">
+            <div class="integration-card animate-on-scroll">
+                <i class="fas fa-biohazard"></i>
+                <h3>CBRN Training Simulation (MR)</h3>
+                <p>Desktop-to-Oculus command pipeline where operator commands issued from a desktop build execute as real-time in-headset actions within a Mixed Reality CBRN training scenario.</p>
+            </div>
+            <div class="integration-card animate-on-scroll">
+                <i class="fas fa-street-view"></i>
+                <h3>Head-Tracking Camera Control</h3>
+                <p>Camera-based head-tracking feature where lateral head movement (left/right) directly drives corresponding vehicle/drive movement in a desktop simulation.</p>
+            </div>
+            <div class="integration-card animate-on-scroll">
+                <i class="fas fa-wifi"></i>
+                <h3>NFC-Based Object Recognition</h3>
+                <p>NFC tag-reader system for 3D-printed physical models &mdash; scanning an attached NFC tag against a reader auto-displays the model's full information set.</p>
+            </div>
+            <div class="integration-card animate-on-scroll">
+                <i class="fas fa-drone"></i>
+                <h3>Drone Simulator</h3>
+                <p>Hardware-controlled drone simulator giving full desktop flight control (throttle, pitch, yaw, roll) synced with physical drone hardware.</p>
+            </div>
+            <div class="integration-card animate-on-scroll">
+                <i class="fas fa-qrcode"></i>
+                <h3>OpenCV QR-Based Interaction System</h3>
+                <p>OpenCV-powered multi-QR detection system mounted on a physical prop; scanning a QR code through the Oculus headset camera triggers a real-time in-headset action at the targeted point.</p>
+            </div>
+            <div class="integration-card animate-on-scroll">
+                <i class="fas fa-microphone-alt"></i>
+                <h3>ElevenLabs Voice Integration</h3>
+                <p>Multiple AI-generated voice profiles integrated via ElevenLabs across simulation and training applications for dynamic character and narration audio.</p>
+            </div>
+            <div class="integration-card animate-on-scroll">
+                <i class="fas fa-heartbeat"></i>
+                <h3>Wearable Vitals Streaming</h3>
+                <p>Wear OS app streaming live vitals (SpO2, BPM, step count) from Samsung Galaxy Watch to desktop; reverse-engineered third-party pulse oximeters to stream vitals via BLE to desktop and Oculus.</p>
+            </div>
+            <div class="integration-card animate-on-scroll">
+                <i class="fas fa-bicycle"></i>
+                <h3>Physical Cycle &rarr; Game Sync</h3>
+                <p>BLE-connected pedal-cycle hardware synchronized with both desktop and mobile games, driving in-game cycling movement across multiple distinct routes.</p>
+            </div>
+        </div>
     </section>
 
     <section id="projects" class="projects">
@@ -142,6 +190,18 @@
             <div class="skill-card animate-on-scroll">
                 <i class="fas fa-cube"></i>
                 <h3>MR/XR</h3>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fab fa-bluetooth-b"></i>
+                <h3>BLE Integration</h3>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fas fa-eye"></i>
+                <h3>OpenCV</h3>
+            </div>
+            <div class="skill-card animate-on-scroll">
+                <i class="fas fa-wifi"></i>
+                <h3>NFC Systems</h3>
             </div>
             <div class="skill-card animate-on-scroll">
                 <i class="fab fa-android"></i>
