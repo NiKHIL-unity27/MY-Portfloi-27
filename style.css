@@ -216,6 +216,112 @@ section {
     position: relative;
 }
 
+/* Hardware & Systems Integration Section */
+.integrations {
+    background: linear-gradient(135deg, #0a0e27 0%, #2d1b69 60%, #1a1a4e 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.integrations::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 80% 20%, rgba(0, 255, 136, 0.15), transparent 50%);
+}
+
+.integrations h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 3rem;
+    background: linear-gradient(45deg, #00ff88, #8a2be2, #ff00ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.integrations-subtitle {
+    text-align: center;
+    color: #ccc;
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    position: relative;
+}
+
+.integration-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.integration-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 30px 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.integration-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.integration-card:hover::before {
+    left: 100%;
+}
+
+.integration-card i {
+    font-size: 2.2rem;
+    color: #00ff88;
+    margin-bottom: 15px;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.integration-card h3 {
+    color: #fff;
+    font-size: 1.2rem;
+    margin: 0 0 12px 0;
+}
+
+.integration-card p {
+    color: #b8b8d1;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+.integration-card:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-6px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    border-color: rgba(0, 255, 136, 0.4);
+}
+
+.integration-card:hover i {
+    color: #ff00ff;
+    transform: scale(1.1);
+}
+
 .projects {
     background: linear-gradient(135deg, #0a0e27 0%, #1a1a4e 50%, #0a0e27 100%);
 }
@@ -561,6 +667,10 @@ form button:hover {
     .skills-grid {
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
         gap: 20px;
+    }
+
+    .integration-grid {
+        grid-template-columns: 1fr;
     }
 }
 
