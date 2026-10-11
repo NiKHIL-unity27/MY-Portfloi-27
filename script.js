@@ -1,8 +1,8 @@
-/* ================= PROJECT DATA ================= */
+// ===== Project data =====
 const PROJECTS = [
   { id:'cbrn', cat:'xr', badge:'Mixed Reality', title:'CBRN Training Simulation', art:'radar', c:['#00ff88','#8a2be2'],
     short:'Desktop-to-Oculus command pipeline for a Mixed Reality CBRN drill.',
-    long:"A Mixed Reality training scenario where an operator on a desktop build issues commands that execute instantly inside the trainee's Oculus headset, so instructors can steer the drill live.",
+    long:'A Mixed Reality training scenario where an operator on a desktop build issues commands that execute instantly inside the trainee\'s Oculus headset, so instructors can steer the drill live.',
     tags:['Unity','Oculus','MR','Networking','ElevenLabs'],
     features:['Real-time desktop to headset command channel','Instructor can trigger hazards and events mid-drill','AI voice profiles for dynamic narration and characters','Built for repeatable, safe hazard-response training'],
     metrics:[['Live','Operator to headset'],['MR','Passthrough scenario']] },
@@ -20,7 +20,7 @@ const PROJECTS = [
     metrics:[['5+','Behaviour states'],['Modular','Drop-in system']] },
   { id:'nhs', cat:'xr', badge:'Healthcare', title:'NHS Project', art:'pulse', c:['#00b4ff','#00ff88'],
     short:'Healthcare-focused interactive experience built in Unity.',
-    long:'An interactive healthcare project built with Unity. EDIT THIS: add your role, what the app does and the result it achieved.',
+    long:'An interactive healthcare project built with Unity. Edit this card with your own details: your role, what the app does and the result it achieved.',
     tags:['Unity','Healthcare','Interactive'],
     features:['Add your key feature here','Add your role and responsibilities','Add the outcome or impact'],
     metrics:[['Impact','Add a real number'],['Role','Add yours']] },
@@ -86,7 +86,7 @@ const PROJECTS = [
     metrics:[['3','Games'],['2D','Arcade style']] }
 ];
 
-/* ================= GENERATED ARTWORK ================= */
+// ===== Generated artwork =====
 function artSVG(p){
   const [a,b]=p.c, id='g'+p.id;
   let shapes='';
@@ -107,7 +107,7 @@ function artSVG(p){
   return `<svg viewBox="0 0 400 320" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="${id}" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a0e27"/><stop offset="1" stop-color="${b}" stop-opacity=".55"/></linearGradient></defs><rect width="400" height="320" fill="url(#${id})"/>${lines}${shapes}</svg>`;
 }
 
-/* ================= RENDER CARDS ================= */
+// ===== Render cards =====
 const grid=document.getElementById('pgrid');
 grid.innerHTML=PROJECTS.map((p,i)=>`
  <article class="pcard animate-on-scroll" data-cat="${p.cat}" data-i="${i}" tabindex="0" role="button" aria-label="Open ${p.title}">
@@ -116,19 +116,19 @@ grid.innerHTML=PROJECTS.map((p,i)=>`
   <div class="tags">${p.tags.slice(0,4).map(t=>`<span>${t}</span>`).join('')}</div>
   <div class="more">View details &rarr;</div></div></article>`).join('');
 
-/* ================= FILTERS ================= */
+// ===== Filters =====
 document.querySelectorAll('.chip').forEach(c=>c.addEventListener('click',()=>{
   document.querySelectorAll('.chip').forEach(x=>x.classList.remove('active')); c.classList.add('active');
   document.querySelectorAll('.pcard').forEach(card=>card.classList.toggle('hide', c.dataset.f!=='all' && card.dataset.cat!==c.dataset.f));
 }));
 
-/* ================= 3D TILT ================= */
+// ===== 3D tilt =====
 document.querySelectorAll('.pcard').forEach(card=>{
   card.addEventListener('mousemove',e=>{const r=card.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;card.style.transform=`rotateY(${x*10}deg) rotateX(${-y*10}deg) translateY(-6px)`;});
   card.addEventListener('mouseleave',()=>card.style.transform='');
 });
 
-/* ================= MODAL ================= */
+// ===== Modal =====
 const modal=document.getElementById('modal'), mbody=document.getElementById('mbody');
 let cur=0;
 function visible(){return [...document.querySelectorAll('.pcard:not(.hide)')].map(c=>+c.dataset.i);}
@@ -149,36 +149,49 @@ document.getElementById('mnext').onclick=()=>step(1);
 modal.addEventListener('click',e=>{if(e.target===modal) closeP();});
 document.addEventListener('keydown',e=>{if(!modal.classList.contains('open'))return; if(e.key==='Escape')closeP(); if(e.key==='ArrowRight')step(1); if(e.key==='ArrowLeft')step(-1);});
 
-/* ================= STAT COUNTERS ================= */
-const io=new IntersectionObserver(es=>es.forEach(en=>{
-  if(!en.isIntersecting)return;
-  const el=en.target,t=+el.dataset.n;let n=0;
-  const iv=setInterval(()=>{n++;el.textContent=n+'+';if(n>=t)clearInterval(iv);},60);
-  io.unobserve(el);
-}));
+// ===== Stat counters =====
+const io=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isTarget&&!en.isIntersecting)return;const el=en.target,t=+el.dataset.n;let n=0;const iv=setInterval(()=>{n++;el.textContent=n+'+';if(n>=t)clearInterval(iv);},60);io.unobserve(el);}));
 document.querySelectorAll('[data-n]').forEach(el=>io.observe(el));
 
-/* ================= HERO PARTICLES ================= */
+// ===== Hero particles =====
 (function(){
-  const cv=document.getElementById('particles'); if(!cv)return;
-  const ctx=cv.getContext('2d'); let W,H,pts=[];
+  const cv=document.getElementById('particles'); if(!cv)return; const ctx=cv.getContext('2d'); let W,H,pts=[];
   function size(){W=cv.width=cv.offsetWidth;H=cv.height=cv.offsetHeight;pts=Array.from({length:Math.min(70,W/18)},()=>({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5}));}
   size(); addEventListener('resize',size);
-  (function loop(){
-    ctx.clearRect(0,0,W,H);
-    pts.forEach((p,i)=>{
-      p.x+=p.vx;p.y+=p.vy;
-      if(p.x<0||p.x>W)p.vx*=-1; if(p.y<0||p.y>H)p.vy*=-1;
-      ctx.fillStyle='rgba(0,255,136,.7)';ctx.fillRect(p.x,p.y,2,2);
-      for(let j=i+1;j<pts.length;j++){
-        const q=pts[j],d=Math.hypot(p.x-q.x,p.y-q.y);
-        if(d<110){ctx.strokeStyle=`rgba(138,43,226,${.35*(1-d/110)})`;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}
-      }
-    });
-    requestAnimationFrame(loop);
-  })();
+  (function loop(){ctx.clearRect(0,0,W,H);
+    pts.forEach((p,i)=>{p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;ctx.fillStyle='rgba(0,255,136,.7)';ctx.fillRect(p.x,p.y,2,2);
+      for(let j=i+1;j<pts.length;j++){const q=pts[j],d=Math.hypot(p.x-q.x,p.y-q.y);if(d<110){ctx.strokeStyle=`rgba(138,43,226,${.35*(1-d/110)})`;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}}});
+    requestAnimationFrame(loop);})();
 })();
 
 /* ================= YOUR ORIGINAL CODE ================= */
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click',
+    anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function () {
+    const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+
+    function handleScroll() {
+        const viewportHeight = window.innerHeight;
+        elementsToAnimate.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+            if (elementTop < viewportHeight - 100) {
+                element.classList.add('visible');
+            }
+        });
+    }
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+});
+
+document.getElementById('mobile-menu').addEventListener('click', function() {
+    const navList = document.querySelector('.nav-list');
+    navList.classList.toggle('active');
+});
