@@ -8,14 +8,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-   <header>
+<header>
     <nav>
-        <div class="logo">
-            <a href="#home">🎮 Nikhil Singh - Game Dev</a>
-        </div>
-        <div class="menu-toggle" id="mobile-menu">
-            <i class="fas fa-bars"></i>
-        </div>
+        <div class="logo"><a href="#home">🎮 Nikhil Singh - Game Dev</a></div>
+        <div class="menu-toggle" id="mobile-menu"><i class="fas fa-bars"></i></div>
         <ul class="nav-list">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About Me</a></li>
@@ -27,217 +23,105 @@
     </nav>
 </header>
 
-    <section id="home" class="hero">
-        <h1>Nikhil Singh</h1>
-        <p>Game Developer | VR/AR/MR Specialist | Hardware Integration Engineer</p>
-        <div class="cta-buttons">
-            <a href="#projects" class="cta">View My Work</a>
-            <a href="./Nikhilcv.pdf" class="cta download-cv" download>Download CV</a>
-        </div>
-    </section>
+<section id="home" class="hero">
+    <canvas id="particles"></canvas>
+    <h1>Nikhil Singh</h1>
+    <p>Game Developer | VR/AR/MR Specialist | Hardware Integration Engineer</p>
+    <div class="cta-buttons">
+        <a href="#projects" class="cta">View My Work</a>
+        <a href="./Nikhilcv.pdf" class="cta download-cv" download>Download CV</a>
+    </div>
+</section>
 
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>Passionate game developer specializing in immersive experiences with Unity, VR/AR/XR technologies. Beyond software, I build real-world hardware-to-software pipelines &mdash; connecting BLE devices, cameras, NFC readers, drones, and computer vision into Unity and XR headsets to create physical-to-virtual interactive systems. Eager to contribute innovative solutions and technical expertise to next-generation gaming and simulation projects.</p>
-    </section>
+<section id="about" class="about">
+    <h2>About Me</h2>
+    <p>Passionate game developer specializing in immersive experiences with Unity, VR/AR/XR technologies. Beyond software, I build real-world hardware-to-software pipelines &mdash; connecting BLE devices, cameras, NFC readers, drones, and computer vision into Unity and XR headsets to create physical-to-virtual interactive systems. Eager to contribute innovative solutions and technical expertise to next-generation gaming and simulation projects.</p>
+    <div class="stats">
+        <div class="stat"><b data-n="14">0</b><span>Projects</span></div>
+        <div class="stat"><b data-n="8">0</b><span>Hardware integrations</span></div>
+        <div class="stat"><b data-n="3">0</b><span>XR platforms</span></div>
+    </div>
+</section>
 
-    <section id="integrations" class="integrations">
-        <h2>Hardware &amp; Systems Integration</h2>
-        <p class="integrations-subtitle">Real-world hardware and sensors connected to Unity, XR headsets, and desktop applications</p>
-        <div class="integration-grid">
-            <div class="integration-card animate-on-scroll">
-                <i class="fas fa-biohazard"></i>
-                <h3>CBRN Training Simulation (MR)</h3>
-                <p>Desktop-to-Oculus command pipeline where operator commands issued from a desktop build execute as real-time in-headset actions within a Mixed Reality CBRN training scenario.</p>
-            </div>
-            <div class="integration-card animate-on-scroll">
-                <i class="fas fa-street-view"></i>
-                <h3>Head-Tracking Camera Control</h3>
-                <p>Camera-based head-tracking feature where lateral head movement (left/right) directly drives corresponding vehicle/drive movement in a desktop simulation.</p>
-            </div>
-            <div class="integration-card animate-on-scroll">
-                <i class="fas fa-wifi"></i>
-                <h3>NFC-Based Object Recognition</h3>
-                <p>NFC tag-reader system for 3D-printed physical models &mdash; scanning an attached NFC tag against a reader auto-displays the model's full information set.</p>
-            </div>
-            <div class="integration-card animate-on-scroll">
-                <i class="fas fa-drone"></i>
-                <h3>Drone Simulator</h3>
-                <p>Hardware-controlled drone simulator giving full desktop flight control (throttle, pitch, yaw, roll) synced with physical drone hardware.</p>
-            </div>
-            <div class="integration-card animate-on-scroll">
-                <i class="fas fa-qrcode"></i>
-                <h3>OpenCV QR-Based Interaction System</h3>
-                <p>OpenCV-powered multi-QR detection system mounted on a physical prop; scanning a QR code through the Oculus headset camera triggers a real-time in-headset action at the targeted point.</p>
-            </div>
-            <div class="integration-card animate-on-scroll">
-                <i class="fas fa-microphone-alt"></i>
-                <h3>ElevenLabs Voice Integration</h3>
-                <p>Multiple AI-generated voice profiles integrated via ElevenLabs across simulation and training applications for dynamic character and narration audio.</p>
-            </div>
-            <div class="integration-card animate-on-scroll">
-                <i class="fas fa-heartbeat"></i>
-                <h3>Wearable Vitals Streaming</h3>
-                <p>Wear OS app streaming live vitals (SpO2, BPM, step count) from Samsung Galaxy Watch to desktop; reverse-engineered third-party pulse oximeters to stream vitals via BLE to desktop and Oculus.</p>
-            </div>
-            <div class="integration-card animate-on-scroll">
-                <i class="fas fa-bicycle"></i>
-                <h3>Physical Cycle &rarr; Game Sync</h3>
-                <p>BLE-connected pedal-cycle hardware synchronized with both desktop and mobile games, driving in-game cycling movement across multiple distinct routes.</p>
-            </div>
-        </div>
-    </section>
+<section id="integrations" class="integrations">
+    <h2>Hardware &amp; Systems Integration</h2>
+    <p class="integrations-subtitle">Real-world hardware and sensors connected to Unity, XR headsets, and desktop applications</p>
+    <div class="pipeline animate-on-scroll">
+        <div class="pipe-node"><i class="fas fa-microchip"></i>Sensors &amp; Hardware</div><div class="pipe-arrow"></div>
+        <div class="pipe-node"><i class="fab fa-bluetooth-b"></i>BLE / NFC / Camera</div><div class="pipe-arrow"></div>
+        <div class="pipe-node core"><i class="fab fa-unity"></i>Unity Engine</div><div class="pipe-arrow"></div>
+        <div class="pipe-node"><i class="fas fa-vr-cardboard"></i>Oculus / Desktop / Mobile</div>
+    </div>
+    <div class="integration-grid">
+        <div class="integration-card animate-on-scroll"><i class="fas fa-biohazard"></i><h3>CBRN Training Simulation (MR)</h3><p>Desktop-to-Oculus command pipeline where operator commands issued from a desktop build execute as real-time in-headset actions within a Mixed Reality CBRN training scenario.</p></div>
+        <div class="integration-card animate-on-scroll"><i class="fas fa-street-view"></i><h3>Head-Tracking Camera Control</h3><p>Camera-based head-tracking feature where lateral head movement (left/right) directly drives corresponding vehicle/drive movement in a desktop simulation.</p></div>
+        <div class="integration-card animate-on-scroll"><i class="fas fa-wifi"></i><h3>NFC-Based Object Recognition</h3><p>NFC tag-reader system for 3D-printed physical models &mdash; scanning an attached NFC tag against a reader auto-displays the model's full information set.</p></div>
+        <div class="integration-card animate-on-scroll"><i class="fas fa-plane"></i><h3>Drone Simulator</h3><p>Hardware-controlled drone simulator giving full desktop flight control (throttle, pitch, yaw, roll) synced with physical drone hardware.</p></div>
+        <div class="integration-card animate-on-scroll"><i class="fas fa-qrcode"></i><h3>OpenCV QR-Based Interaction System</h3><p>OpenCV-powered multi-QR detection system mounted on a physical prop; scanning a QR code through the Oculus headset camera triggers a real-time in-headset action at the targeted point.</p></div>
+        <div class="integration-card animate-on-scroll"><i class="fas fa-microphone-alt"></i><h3>ElevenLabs Voice Integration</h3><p>Multiple AI-generated voice profiles integrated via ElevenLabs across simulation and training applications for dynamic character and narration audio.</p></div>
+        <div class="integration-card animate-on-scroll"><i class="fas fa-heartbeat"></i><h3>Wearable Vitals Streaming</h3><p>Wear OS app streaming live vitals (SpO2, BPM, step count) from Samsung Galaxy Watch to desktop; reverse-engineered third-party pulse oximeters to stream vitals via BLE to desktop and Oculus.</p></div>
+        <div class="integration-card animate-on-scroll"><i class="fas fa-bicycle"></i><h3>Physical Cycle &rarr; Game Sync</h3><p>BLE-connected pedal-cycle hardware synchronized with both desktop and mobile games, driving in-game cycling movement across multiple distinct routes.</p></div>
+    </div>
+</section>
 
-    <section id="projects" class="projects">
-        <h2>My Projects</h2>
-        <div class="project-list">
-            <div class="project animate-on-scroll">
-                <h3>FPS Framework Beta</h3>
-                <p>First-person shooter controller featuring guns and melee weapons</p>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/qQNxHT2t32M" 
-                            title="FPS Framework Beta" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-            <div class="project animate-on-scroll">
-                <h3>Unity Integration with Flutter</h3>
-                <p>Online gaming app built with Unity and Flutter (under development)</p>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/Gju0p3VddIk" 
-                            title="Unity Flutter Integration" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
+<section id="projects" class="projects">
+    <h2>My Projects</h2>
+    <div class="filters">
+        <button class="chip active" data-f="all">All</button>
+        <button class="chip" data-f="xr">XR / Simulation</button>
+        <button class="chip" data-f="hardware">Hardware</button>
+        <button class="chip" data-f="games">Games &amp; Tools</button>
+    </div>
+    <div class="pgrid" id="pgrid"></div>
+</section>
 
-            <div class="project animate-on-scroll">
-                <h3>5-Minute Vehicle Setup Framework Alpha</h3>
-                <p>Rapid vehicle development tool for creating drivable vehicles in under 5 minutes</p>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/8X5aqFSy-iM" 
-                            title="Vehicle Setup Framework" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
+<div class="modal" id="modal" aria-modal="true" role="dialog">
+    <div class="mbox">
+        <button class="mclose" id="mclose" aria-label="Close">&times;</button>
+        <button class="mnav prev" id="mprev" aria-label="Previous">&#8249;</button>
+        <button class="mnav next" id="mnext" aria-label="Next">&#8250;</button>
+        <div id="mbody"></div>
+    </div>
+</div>
 
-            <div class="project animate-on-scroll">
-                <h3>Endless Runner Game</h3>
-                <p>Classic endless runner game with smooth mechanics and engaging gameplay</p>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/T_6ieecDPV8" 
-                            title="Endless Runner Game" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
+<section id="skills" class="skills">
+    <h2>My Skills & Technologies</h2>
+    <div class="skills-grid">
+        <div class="skill-card animate-on-scroll"><i class="fab fa-unity"></i><h3>Unity</h3></div>
+        <div class="skill-card animate-on-scroll"><i class="fas fa-code"></i><h3>C#</h3></div>
+        <div class="skill-card animate-on-scroll"><i class="fas fa-code"></i><h3>C++</h3></div>
+        <div class="skill-card animate-on-scroll"><i class="fas fa-vr-cardboard"></i><h3>VR Development</h3></div>
+        <div class="skill-card animate-on-scroll"><i class="fas fa-mobile-alt"></i><h3>AR Development</h3></div>
+        <div class="skill-card animate-on-scroll"><i class="fas fa-cube"></i><h3>MR/XR</h3></div>
+        <div class="skill-card animate-on-scroll"><i class="fab fa-bluetooth-b"></i><h3>BLE Integration</h3></div>
+        <div class="skill-card animate-on-scroll"><i class="fas fa-eye"></i><h3>OpenCV</h3></div>
+        <div class="skill-card animate-on-scroll"><i class="fas fa-wifi"></i><h3>NFC Systems</h3></div>
+        <div class="skill-card animate-on-scroll"><i class="fab fa-android"></i><h3>Android Studio</h3></div>
+        <div class="skill-card animate-on-scroll"><i class="fas fa-gamepad"></i><h3>Game Design</h3></div>
+    </div>
+</section>
 
-            <div class="project animate-on-scroll">
-                <h3>One-Day Game Dev Challenge</h3>
-                <p>Horror game created in just 24 hours as part of a development challenge</p>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/cIbX-v7D5KA" 
-                            title="One Day Horror Game" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
+<section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form action="https://formspree.io/f/mljrlqwy" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
 
-            <div class="project animate-on-scroll">
-                <h3>Arcade Car Controller</h3>
-                <p>Responsive arcade-style car controller with smooth handling</p>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/o8XJHFNOVoc" 
-                            title="Arcade Car Controller" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
+<footer>
+    <p>&copy; 2024 Nikhil Singh. All rights reserved.</p>
+    <p>
+        <i class="fas fa-phone-alt"></i> <a href="tel:+917018295767">+91 7018295767</a> |
+        <i class="fas fa-envelope"></i> <a href="mailto:singhnikhil0072@gmail.com">singhnikhil0072@gmail.com</a>
+    </p>
+</footer>
 
-            <div class="project animate-on-scroll">
-                <h3>Car Rush</h3>
-                <p>Fast-paced 2D car racing game</p>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/vpw7xg-5KjI" 
-                            title="Car Rush Game" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-           
-            <div class="project animate-on-scroll">
-                <h3>Old-School Space Shooter</h3>
-                <p>Classic 2D arcade-style space shooting game</p>
-                <div class="video-container">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/sgBACvINRoE" 
-                            title="Space Shooter Game" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="skills" class="skills">
-        <h2>My Skills & Technologies</h2>
-        <div class="skills-grid">
-            <div class="skill-card animate-on-scroll">
-                <i class="fab fa-unity"></i>
-                <h3>Unity</h3>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fas fa-code"></i>
-                <h3>C#</h3>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fas fa-code"></i>
-                <h3>C++</h3>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fas fa-vr-cardboard"></i>
-                <h3>VR Development</h3>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fas fa-mobile-alt"></i>
-                <h3>AR Development</h3>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fas fa-cube"></i>
-                <h3>MR/XR</h3>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fab fa-bluetooth-b"></i>
-                <h3>BLE Integration</h3>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fas fa-eye"></i>
-                <h3>OpenCV</h3>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fas fa-wifi"></i>
-                <h3>NFC Systems</h3>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fab fa-android"></i>
-                <h3>Android Studio</h3>
-            </div>
-            <div class="skill-card animate-on-scroll">
-                <i class="fas fa-gamepad"></i>
-                <h3>Game Design</h3>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="contact">
-        <h2>Contact Me</h2>
-        <form action="https://formspree.io/f/mljrlqwy" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required>
-
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Nikhil Singh. All rights reserved.</p>
-        <p>
-            <i class="fas fa-phone-alt"></i> <a href="tel:+917018295767">+91 7018295767</a> |
-            <i class="fas fa-envelope"></i> <a href="mailto:singhnikhil0072@gmail.com">singhnikhil0072@gmail.com</a>
-        </p>
-    </footer>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
